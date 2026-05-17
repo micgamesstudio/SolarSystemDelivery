@@ -1,0 +1,22 @@
+//---------------------------------------------------------------Nome app--------------------------------------------------------------------------//
+Solar System Delivery
+
+//----------------------------------------------------------Descrizione breve----------------------------------------------------------------------//
+Space courier game: deliver cargo, explore stations, and play mini-games
+
+//---------------------------------------------------------Descrizione completa--------------------------------------------------------------------//
+Corriere Spaziale: Consegna, Esplora e Gioca
+
+Diventa un corriere spaziale in tutto il Sistema Solare dove la tua missione è trasportare merci nello spazio, attraccare alle stazioni orbitali e completare le consegne. Aiuta il lavoro nelle stazioni con minigiochi che ampliano l'esperienza oltre le semplici consegne.
+
+Affronta missioni e goditi un gameplay ottimizzato per dispositivi mobili. Completa le consegne, potenzia la tua nave per spingerti verso i pianeti più lontani del Sistema Solare.
+Unisciti al viaggio e diventa il corriere più affidabile!
+
+Caratteristiche:
+✔ Missioni di consegna spaziale
+✔ Ambienti 3D ottimizzati per dispositivi mobili
+✔ Minigiochi e attività extra
+✔ Gameplay basato sull'esplorazione e sulle missioni
+✔ Affronta missioni governative speciali
+
+Neptune Engine, un motore di gioco indie sviluppato in Javascript e Three.js

@@ -1,0 +1,65 @@
+--------------------------------------------AGGIUNGERE UN MODULO DELLA NAVE-------------------------------------------------
+
+---------------------------OGGETTO-----------------------------
+Oggetti - Spaceship - Modular
+Aggiungere un nuovo modulo
+Model - Indice del modulo aggiunto (lo so che sarebbe inutile ma così è :P)
+GeomModel - Indice nell'array geometrie
+
+---------------------------GEOMETRIA--------------------------
+EngineParameters.js - Geometrie
+Aggiungi unaa nuova geometria completa
+
+----------------------------EDITOR----------------------------
+Per aiutare nel disegno settare la pagina Editor:
+EngineParameters.js - EditorParam.Editor.Default.Type: "ModularShip"
+                                                .SubType: 1,
+                                                .Num: X,                //Indice inserito in Model
+
+--------------------SOLAR SYSTEM DELIVERY-----------------------
+Il gioco così strutturato ha già inserito al suo interno il modulo creato
+
+-VARIABILE GLOBALE PER CONTARE IL NUMERO DI MODULI INSTALLATI
+Game.js - GlobalVar.RadarModules: Number(window.localStorage.getItem(`RadarModules`)),               //QUANTITÀ DI MODULI RADAR
+
+Game.js - G1_ChangeSavePage - window.localStorage.setItem(`RadarModules`, GlobalVar.RadarModules);
+
+Game.js - if (window.localStorage.getItem("Init") != 1) {
+    window.localStorage.setItem(`RadarModules`, 0);
+
+-SPRITE
+Game.js - VarObjectsStation.ImageRadar: "../../SpaceGame/texture/Parts/Turret1_200.png",
+Pagina Hangar Statica - PARTS AREA - CREAZIONE MODULO COMPRABILE - 0 MINIATURA
+if (Oggetti.Spaceship.Modular[i].Name[0] == "RADAR") Part.src = VarObjectsStation.ImageRadar;
+
+-CONDIZIONI PER RENDERELO COMPRABILE
+Pagina Hangar Statica - PARTS AREA - CREAZIONE MODULO COMPRABILE - FUNZIONE CLICK
+
+-MINIATURA NAVE SPAZIALE
+Pagina Hangar Statica - G1_CreateButtonShip - if (Array[i] == 11) {
+Creare i div che raffigurano il nuovo modulo
+
+Pagina Hangar Statica - MINIATURA NAVE SPAZIALE
+//SE IL MODULO È QUELLO DI ESTRAZIONE
+else if (i == 11) {
+//SE NON SI POSSIEDE GIÀ QUEL MODULO
+if (GlobalVar.RadarModules == 0) {
+    G2_BuyModule();
+};
+}
+
+-CONTA DEI MODULI ACQUISTATI
+Pagina Hangar Statica - GlobalVar.RadarModules = MicEnginereturn.VarModularShip.NumModules[11];
+Pagina Gioco Statica - CARICAMENTO/NUOVA PARTITA - GlobalVar.RadarModules = MicEnginereturn.VarModularShip.NumModules[11];
+
+-FUNZIONI VARIE
+Pagina Hangar Statica - function G1_UpdateValues
+//AGGIORNA LA QUANTITÀ DI MEMBRI DI EQUIPAGGIO ATTUALI
+            VarObjectsStation.Crew = 1 + MicEnginereturn.VarModularShip.NumModules[10] + MicEnginereturn.VarModularShip.NumModules[5] + MicEnginereturn.VarModularShip.NumModules[11];
+
+Pagina Hub Statica - G1_UpdateCrew
+VarObjectsHub.CrewMembers = 1 + GlobalVar.ExtractionModules + GlobalVar.ContainerModules+GlobalVar.RadarModules;
+
+Pagina Research Statica
+//AGGIORNA LA QUANTITÀ DI MEMBRI DI EQUIPAGGIO ATTUALI
+VarObjectsResearch.Crew = 1 + GlobalVar.ExtractionModules + GlobalVar.ContainerModules+GlobalVar.RadarModules;

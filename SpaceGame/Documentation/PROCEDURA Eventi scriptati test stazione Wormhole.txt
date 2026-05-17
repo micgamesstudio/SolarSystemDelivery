@@ -1,0 +1,24 @@
+-------------------------------------------------------PAGINA DEL GIOCO-----------------------------------------------------------------------
+function _100_Story()
+//EVENTI SCRIPTATI PER IL TEST DELLA STAZIONE WORMHOLE
+if (GlobalVar.Missione == 7) {
+    VarObject.TimeScriptTest++;
+
+IN BESE AL VALORE RAGGIUNTO DAL TIMER VarObject.TimeScriptTest SI IMPOSTA UN VALORE ALLA VARIABILE VarObject.StepNPCTest CHE ATTIVA DEGLI EVENTI
+
+
+
+
+//EVENTI ONCE
+DENTRO LA FUNZIONE ONCE AGGIUNGERE DELLE CONDIZIONI DI VALORE PER LA VARIABILE VarObject.StepNPCTest E ATTIVARE DEGLI SCRIPT DA ESEGUIRE UNA VOLTA
+const TestStationNPC = new MicEnginereturn.VarObject.OnceFunction(function () {
+//ATTACCA LA CAMERA ALLA STAZIONE WORMHOLE
+if (VarObject.StepNPCTest == 1) MicEnginereturn.PlanetarySystem.children[4].children[0].children[5].children[0].children[0].add(VarObject.Camera);
+
+//EVENTI LOOP
+AGGIUNGERE DELLE CONDIZIONI DI VALORE PER LA VARIABILE VarObject.StepNPCTest E ATTIVARE DEGLI SCRIPT DA ESEGUIRE NEL LOOP RENDER
+function UpdateGame(delta) {
+/*---------------------------STORIA------------------------*/
+//EVENTI SCRIPTATI PER IL TEST DELLA STAZIONE WORMHOLE
+   if (GlobalVar.Capitolo == 2 && GlobalVar.Missione == 7) {
+      if (VarObject.StepNPCTest == 1)

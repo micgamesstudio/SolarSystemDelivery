@@ -1,0 +1,24 @@
+DIRECTORY DEL PROGETTO
+solar-system-delivery-8_1
+
+CONFIGURAZIONE DELLA VERSIONE DI ANDROID DI RIFERIMENTO
+/android/variables.gradle
+compiledSdkVersion = 36
+targetSdkVersion = 36
+
+CONFIGURAZIONE DEL FILE /android/app/build.gradle
+VERSIONE 1 V0.0
+android {
+    namespace = "com.solar.system.delivery.app"
+
+    defaultConfig {
+        applicationId "com.solar.system.delivery.app"
+        versionCode 1
+        versionName "0.0"
+    }
+}
+
+/capacitor.config.json
+{
+    "appId": "com.solar.system.delivery.app"
+}

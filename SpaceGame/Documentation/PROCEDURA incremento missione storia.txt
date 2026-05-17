@@ -1,0 +1,28 @@
+-------------------------------------------------PAGINA DEL PROGETTO WORMHOLE-------------------------------------------------------------
+
+Avvio della pagina - //FLAG DI STORIA
+Condizioni: "Capitolo" e "Missione" corrispondono, più altre condizioni legate alla storia
+impostare "VarObjectsWormhole.FlagStoria" che corrisponde a "NPC.Wormhole.Testi[]"
+
+Avvio della pagina - //NPC DI BENVENUTO E DI STORIA
+Nella funzione creare le condizioni di "Capitolo" e "Missione" inserire eventuali funzioni e G1_CommonNPC();
+con il valore della ricompensa, nelle funzioni ci deve essere SaveSystem.setItem(`FlagMissione`, 1); che imposta
+il flag di missione completata nel local storage
+
+------------------------------------------------------ENGINE PARAMETERS---------------------------------------------------------------------
+"NPC.Wormhole.Testi"
+Nell'indice corrispondente a "VarObjectsWormhole.FlagStoria - 1" creare il messaggio di missione conclusa
+
+-------------------------------------------------------PAGINA DEL GIOCO-----------------------------------------------------------------------
+/*--------------------STORIA--------------------------*/
+Creare una funzione che se corrispondono le condizioni di "Capitolo" e "Missione" e il FlagMissione==1 incrementa la missione 
+e resetta il FlagMissione, oppure cambia capitolo ecc.
+if (GlobalVar.Capitolo == 2) {
+    if (GlobalVar.Missione > 0 && SaveSystem.getItem('FlagMissione') == 1) {
+        GlobalVar.Missione++;
+        SaveSystem.setItem(`FlagMissione`, 0);
+    };
+};
+
+------------------------------------------------------ENGINE PARAMETERS---------------------------------------------------------------------
+"Testi.Missions" nel capitolo e missione nuovi impostati nella pagina del gioco aggiungere il testo della nuova missione
