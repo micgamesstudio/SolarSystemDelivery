@@ -1,0 +1,1 @@
+https://unpkg.com/simplex-noise@4.0.1/dist/esm/simplex-noise.js?utm_source=chatgpt.com

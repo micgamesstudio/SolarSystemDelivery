@@ -1,0 +1,6 @@
+ALEA
+Generatore di seme deterministico da usare con un algoritmo di noise
+
+https://cdn.jsdelivr.net/npm/alea@1.0.1/alea.js?utm_source=chatgpt.com
+
+
